@@ -1,20 +1,20 @@
 
-#include "ofxMyoBeta.h"
+#include "ofxMyoB.h"
 
-void ofxMyoBeta::setup()
+void ofxMyoBeta::setup( string appName )
 {
     // First, we create a Hub with our application identifier. Be sure not to use the com.example namespace when
     // publishing your application. The Hub provides access to one or more Myos.
     ofBackground(0);
 
-    hub = new myo::Hub( "cc.openFrameworks.myoTest" );
+    hub = new myo::Hub( appName );
     cout << "Attempting to find a Myo..." << endl;
 
     // Next, we attempt to find a Myo to use. If a Myo is already paired in Myo Connect, this will return that Myo
     // immediately.
     // waitForMyo() takes a timeout value in milliseconds. In this case we will try to find a Myo for 10 seconds, and
     // if that fails, the function will return a null pointer.
-    myo::Myo* myo = hub->waitForMyo(10000);
+    myo::Myo* myo = hub->waitForMyo( 10000 );
 
     // If waitForMyo() returned a null pointer, we failed to find a Myo, so exit with an error message.
     if(!myo)
@@ -46,8 +46,37 @@ void ofxMyoBeta::update()
     
 }
 
-void ofxMyoBeta::draw(){
+void ofxMyoBeta::debugDraw(){
+    // PRINTS DATA as numelcal params
     collector.print();
+    
+    // DRAW Collector waves
     collector.draw();
+    
+    // DRAW Orientation Axis
+    collector.drawAxis();
 }
+
+vector<int8_t> &ofxMyoBeta::getEmgArray()
+{
+    vector<int8_t> emgArr;
+    return emgArr;
+}
+
+MYO_STATE ofxMyoBeta::getMyoState()
+{
+    return fist;
+}
+
+ofVec3f &ofxMyoBeta::getOrientation()
+{
+    return m_Orientation;
+}
+
+ofVec3f &ofxMyoBeta::getAccelameter()
+{
+    return m_Accelameter;
+}
+
+
 
