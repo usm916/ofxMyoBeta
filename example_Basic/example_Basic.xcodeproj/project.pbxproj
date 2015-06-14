@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5DB829AB06571273D69F6970 /* ofxMyoBeta.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBA45B6E6A764B59AC28DD4A /* ofxMyoBeta.cpp */; };
-		66BAC28A1AAAFFF400FC0C98 /* ofxMyoDataCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66BAC2881AAAFFF400FC0C98 /* ofxMyoDataCollector.cpp */; };
+		668A2ACB1B2BDB5000E231CD /* ofxMyoB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 668A2AC71B2BDB5000E231CD /* ofxMyoB.cpp */; };
+		668A2ACC1B2BDB5000E231CD /* ofxMyoDataCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 668A2AC91B2BDB5000E231CD /* ofxMyoDataCollector.cpp */; };
 		66CA6B6E1A84CD8800158E80 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CA6B6D1A84CD8800158E80 /* myo.framework */; };
 		66CA6B741A84D2F000158E80 /* myo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66CA6B6D1A84CD8800158E80 /* myo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -65,12 +65,12 @@
 
 /* Begin PBXFileReference section */
 		026B02936D2F7F1250DE5E58 /* myo.framework */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = wrapper.framework; name = myo.framework; path = ../../../addons/ofxMyoBeta/libs/myo/osx/myo.framework; sourceTree = "<group>"; };
-		66BAC2881AAAFFF400FC0C98 /* ofxMyoDataCollector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMyoDataCollector.cpp; sourceTree = "<group>"; };
-		66BAC2891AAAFFF400FC0C98 /* ofxMyoDataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMyoDataCollector.h; sourceTree = "<group>"; };
+		668A2AC71B2BDB5000E231CD /* ofxMyoB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxMyoB.cpp; path = ../src/ofxMyoB.cpp; sourceTree = "<group>"; };
+		668A2AC81B2BDB5000E231CD /* ofxMyoB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxMyoB.h; path = ../src/ofxMyoB.h; sourceTree = "<group>"; };
+		668A2AC91B2BDB5000E231CD /* ofxMyoDataCollector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxMyoDataCollector.cpp; path = ../src/ofxMyoDataCollector.cpp; sourceTree = "<group>"; };
+		668A2ACA1B2BDB5000E231CD /* ofxMyoDataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxMyoDataCollector.h; path = ../src/ofxMyoDataCollector.h; sourceTree = "<group>"; };
 		66CA6B6D1A84CD8800158E80 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = myo.framework; path = ../../../addons/ofxMyoBeta/libs/myo/osx/myo.framework; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
-		D51E63F2413333DCE44F5B5F /* ofxMyoBeta.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMyoBeta.h; path = ../../../addons/ofxMyoBeta/src/ofxMyoBeta.h; sourceTree = SOURCE_ROOT; };
-		DBA45B6E6A764B59AC28DD4A /* ofxMyoBeta.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxMyoBeta.cpp; path = ../../../addons/ofxMyoBeta/src/ofxMyoBeta.cpp; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
 		E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -222,10 +222,10 @@
 		EA82EDF488213ACF5ACA1BBF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				66BAC2881AAAFFF400FC0C98 /* ofxMyoDataCollector.cpp */,
-				66BAC2891AAAFFF400FC0C98 /* ofxMyoDataCollector.h */,
-				DBA45B6E6A764B59AC28DD4A /* ofxMyoBeta.cpp */,
-				D51E63F2413333DCE44F5B5F /* ofxMyoBeta.h */,
+				668A2AC71B2BDB5000E231CD /* ofxMyoB.cpp */,
+				668A2AC81B2BDB5000E231CD /* ofxMyoB.h */,
+				668A2AC91B2BDB5000E231CD /* ofxMyoDataCollector.cpp */,
+				668A2ACA1B2BDB5000E231CD /* ofxMyoDataCollector.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -319,8 +319,8 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				5DB829AB06571273D69F6970 /* ofxMyoBeta.cpp in Sources */,
-				66BAC28A1AAAFFF400FC0C98 /* ofxMyoDataCollector.cpp in Sources */,
+				668A2ACB1B2BDB5000E231CD /* ofxMyoB.cpp in Sources */,
+				668A2ACC1B2BDB5000E231CD /* ofxMyoDataCollector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,3 @@
-//
-//  ofxMyoDataCollector.h
-//  example_Basic
-//
-//  Created by usm on 3/7/15.
-//
-//
 
 #ifndef __example_Basic__ofxMyoDataCollector__
 #define __example_Basic__ofxMyoDataCollector__
@@ -25,7 +18,7 @@ public:
     {
         // We've lost a Myo.
         // Let's clean up some leftover state.
-        emgSamples.clear();//fill(0);
+        emgSamples.clear();
         emgSamples.assign(8, 0);
     }
     
@@ -58,6 +51,9 @@ public:
         float pitch = asin(max(-1.0f, min(1.0f, 2.0f * (quat.w() * quat.y() - quat.z() * quat.x()))));
         float yaw = atan2(2.0f * (quat.w() * quat.z() + quat.x() * quat.y()),
                           1.0f - 2.0f * (quat.y() * quat.y() + quat.z() * quat.z()));
+        roll_d = roll;
+        pitch_d = pitch;
+        yaw_d = yaw;
         
         // Convert the floating point angles in radians to a scale from 0 to 18.
         roll_w = static_cast<int>((roll + (float)M_PI)/(M_PI * 2.0f) * 18);
@@ -181,7 +177,15 @@ public:
     // ------------------------------ darw MYO current axis orientation
     void drawAxis()
     {
-        // TODO make Axis object
+        ofNoFill();
+        ofPushMatrix();
+        ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
+        ofRotateX(roll_d*180);
+        ofRotateY(pitch_d*180.0);
+        ofRotateZ(yaw_d*180.0);
+        ofBox(0,0,0,10);
+        ofDrawAxis(40);
+        ofPopMatrix();
     }
     
     vector< int8_t > &getEmgSamples(){ return emgSamples; }
@@ -199,6 +203,7 @@ public:
     
     // These values are set by onOrientationData() and onPose() above.
     int roll_w, pitch_w, yaw_w;
+    float roll_d, pitch_d, yaw_d;
     myo::Pose currentPose;
 };
 
